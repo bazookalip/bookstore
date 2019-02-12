@@ -48,3 +48,9 @@ button {
     margin: 10px;
     border-radius: 1px;
 }
+
+input, label {
+    display:block;
+    margin: 5px;
+    width: 260px;
+}

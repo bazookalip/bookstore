@@ -3,16 +3,23 @@
 <head>
     <script src="jquery.js"></script>
     <script src="client.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Bookstore</title>
 </head>
 <body>
-    <h1>Bookstore</h1>
+    <div id="parent">
+        <div id="child">
+            <h1>Bookstore</h1>
 
-    <input type="text" placeholder="Title" id="titleInput">
-    <input type="text" placeholder="Author" id="authorInput">
-    <input type="text" placeholder="Published" id="publishedInput">
-    <button id="addBook">Add Book</button>
-    <div id="output"></div>
-        <ul id="outputUl"></ul>
+            <input type="text" placeholder="Title" id="titleInput">
+            <input type="text" placeholder="Author" id="authorInput">
+            <input type="text" placeholder="Published" id="publishedInput">
+            <button id="addBook">Add Book</button>
+            <div id="output"></div>
+                <ul id="outputUl"></ul>
+        </div>
+    </div>
+    
 </body>
 </html>

@@ -1,0 +1,48 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+     background-image: url("chuttersnap.jpg");
+    background-size: cover;
+
+}
+h1 {
+    font-family: 'Libre Barcode 39 Text', cursive;
+    font-size: 36px;
+}
+
+
+#parent {
+  text-align: center;
+  border-radius: 20px;
+  margin: 50px;
+  padding: 20px;
+}
+
+#child {
+  display: inline-block;
+  background: rgba(128, 128, 128, 0.89);
+  color: rgb(238, 238, 228);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
+
+input {
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 30px;
+    border-radius: 1px;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(246, 248, 246, 0.801);
+    border: 1px solid black;
+
+}
+
+button {
+    font-size: 12px;
+    background-color: rgba(184, 189, 185, 0.788);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 1px;

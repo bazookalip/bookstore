@@ -9,11 +9,11 @@ app.use(express.static('server/public'));
 const PORT = 5000;
 
 const pool = pg.Pool({
-    host: 'localhost', // where is your database?
-    port: 5432, // what port is your database on? (Almost always 5432)
-    database: 'bookstore', // the name of your database
-    max: 10, // how many connections (queries) at one time
-    idleTimeoutMillis: 30000 // 30 seconds to try to connect, otherwise cancel query
+    host: 'localhost', 
+    port: 5432, 
+    database: 'bookstore', 
+    max: 10, 
+    idleTimeoutMillis: 30000 
 });
 
 pool.on('connect', () => {

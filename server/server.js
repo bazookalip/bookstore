@@ -38,6 +38,29 @@ app.get('/books', (req, res) => {
         });
 });
 
+app.get('/magazines', (req, res) => {
+    console.log('/magazines GET route was hit');
+    pool.query('SELECT * FROM "magazines"')
+        .then((result) => {
+            console.log(result.rows);
+            res.send(result.rows);
+        }).catch((error) => {
+            console.log('error with magazines select', error);
+            res.sendStatus(500);
+        });
+});
+
+app.post('/magazines', (req, res) => {
+    console.log('/magazines POST route was hit');
+    pool.query(`INSERT INTO "magazines" ("title", "issue_number", "pages")
+    VALUES ($1, $2, $3);`, [req.body.title, req.body.issue_number, req.body.pages])
+        .then(() => {
+            res.sendStatus(201);
+        }).catch((error) => {
+            console.log('error with magazines insert', error);
+            res.sendStatus(500);
+        });
+});
 app.post('/books', (req, res) => {
     console.log('/books POST route was hit');
     pool.query(`INSERT INTO "books" ("title", "author", "published")
@@ -45,7 +68,7 @@ app.post('/books', (req, res) => {
         .then(() => {
             res.sendStatus(201);
         }).catch((error) => {
-            console.log('error with songs insert', error);
+            console.log('error with books insert', error);
             res.sendStatus(500);
         });
 });

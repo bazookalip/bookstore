@@ -3,7 +3,9 @@ $(document).ready(onReady);
 function onReady() {
     console.log('ready!');
     $('#addBook').on('click', addBook);
+    $('#addMagazine').on('click', addMagazine);
     getBooks();
+    getMagazines();
 }
 
 function addBook(){
@@ -26,15 +28,39 @@ function addBook(){
         }); clear();
 }
 
+function addMagazine() {
+    console.log('yay!')
+    let title = $('#title').val();
+    let issue_number = $('#issue').val();
+    let pages = $('#pages').val();
+    console.log(title, issue_number, pages);
+
+    $.ajax({
+        method: 'POST',
+        url: '/magazines',
+        data: {
+            title: title,
+            issue_number: issue_number,
+            pages: pages
+        }
+    }).then(function () {
+        getMagazines();
+        clearMagazine();
+    }); 
+}
 
 
 function clear(){
     $('#titleInput').val('');
     $('#authorInput').val('');
     $('#publishedInput').val('');
-
 }
 
+function clearMagazine() {
+    $('#title').val('');
+    $('#issue').val('');
+    $('#pages').val('');
+}
 
 function getBooks(){
     $.ajax({
@@ -55,4 +81,22 @@ function getBooks(){
     })
 }
 
+function getMagazines() {
+    $.ajax({
+        method: 'GET',
+        url: '/magazines'
+    }).then(function (response) {
+        console.log(response);
+        $('#outputMagazine').empty();
+        response.forEach((magazines) => {
+            $('#outputMagazine').append(`
+                ${magazines.title} <br>
+                ${magazines.issue_number} <br>
+                ${magazines.pages} <br><br>
+             
+        `)
+        });
+        clearMagazine();
+    })
+}
 

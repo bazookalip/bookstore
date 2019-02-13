@@ -54,3 +54,16 @@ input, label {
     margin: 5px;
     width: 260px;
 }
+
+.books{
+ float: left;
+}
+
+.magazines {
+  display: inline-block
+
+}
+
+#addMagazine {
+    margin-bottom: 28px;
+}

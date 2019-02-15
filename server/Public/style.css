@@ -1,13 +1,13 @@
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'PT Mono', monospace;
     font-size: 18px;
-     background-image: url("chuttersnap.jpg");
+    background-image: url("chuttersnap.jpg");
     background-size: cover;
 
 }
 h1 {
     font-family: 'Libre Barcode 39 Text', cursive;
-    font-size: 36px;
+    font-size: 48px;
 }
 
 
@@ -57,10 +57,14 @@ input, label {
 
 .books{
  float: left;
+ 
 }
 
 .magazines {
-  display: inline-block
+  display: inline-block;
+  
+
+
 
 }
 

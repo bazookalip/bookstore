@@ -73,7 +73,11 @@ function getBooks(){
             $('#outputUl').append(`
                 ${books.title} <br>
                 ${books.author} <br>
-                ${books.published} <br><br>
+                <td>
+           ${new Date(books.published).getMonth() + 1} /
+           ${new Date(books.published).getDate()} /
+           ${new Date(books.published).getFullYear()}
+           </td><br><br>
              
         `)
         });

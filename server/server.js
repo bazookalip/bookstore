@@ -6,7 +6,8 @@ const app = express();
 
 app.use(express.static('server/public'));
 
-const PORT = 5000;
+let PORT = process.env.PORT || 5000;
+
 
 const pool = pg.Pool({
     host: 'localhost', 
